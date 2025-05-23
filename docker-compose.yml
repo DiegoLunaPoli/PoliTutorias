@@ -5,9 +5,9 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
-      MYSQL_DATABASE: tutorias
-      MYSQL_USER: tutor_user
-      MYSQL_PASSWORD: tutorpass
+      MYSQL_DATABASE: tutoria_db
+      MYSQL_USER: tutoria_user
+      MYSQL_PASSWORD: 123456
     ports:
       - "3308:3306"
     volumes:
