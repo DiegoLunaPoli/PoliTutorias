@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  selector:
+    matchLabels: { app: backend }
+  replicas: 1
+  template:
+    metadata:
+      labels: { app: backend }
+    spec:
+      containers:
+      - name: backend
+        image: tutorias_universitarias-backend:latest  # build tu imagen local
+        imagePullPolicy: Never
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:mysql://mysql:3306/tutoria_db
+        - name: SPRING_DATASOURCE_USERNAME
+          value: tutoria_user
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "123456"
+        ports:
+        - containerPort: 8080
